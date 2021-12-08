@@ -1027,7 +1027,7 @@ class GlibcArena:
         return GlibcArena("*{:#x} ".format(addr_next))
 
     def is_main_arena(self):
-        return int(self) == parse_address("&main_arena")
+        return int(self) == search_for_main_arena()
 
     def heap_addr(self, allow_unaligned=False):
         if self.is_main_arena():
